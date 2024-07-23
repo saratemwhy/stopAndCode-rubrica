@@ -1,0 +1,143 @@
+
+
+<div class="container">
+  
+
+  <!--form-->
+
+  <form [formGroup]="registrationForm"  class="border border-secondary p-4 m-4">
+    <h2>Registrazione contatto</h2>
+      <!--Scelta persona fisica o giuridica-->
+
+      <div class="form-group row mt-4">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="tipologia">Tipologia</label>
+          </div>
+          <select class="custom-select" id="tipologia" formControlName="tipologia" (click)="sceltaPersona()">
+            <option value="Scegli" selected disabled>Scegli...</option>
+            <option value="personaF">Persona fisica</option>
+            <option value="personaG">Persona giuridica</option>
+          </select>
+          <ng-container *ngIf="registrationForm.controls['tipologia'].invalid && (registrationForm.dirty || registrationForm.touched)">
+            <p [ngStyle]="{'color':'red'}">Inserisci una tipologia</p>
+        </ng-container>
+        </div>
+      </div>
+
+      <!--Nome, cognome o ragione sociale-->
+      <div class="form-row d-flex">
+          <div class="form-group col-md-6 pe-2">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Nome" [attr.disabled]="false">
+            <ng-container *ngIf="registrationForm.controls['nome'].invalid && (registrationForm.controls['nome'].dirty || registrationForm.controls['nome'].touched)">
+                <p [ngStyle]="{'color':'red'}">Inserisci un nome valido</p>
+            </ng-container>
+          </div>
+          
+          <div class="form-group col-md-6">
+            <label for="cognome">Cognome</label>
+            <input type="text" class="form-control" formControlName="cognome" id="cognome" placeholder="Cognome" [attr.disabled]="false">
+            <ng-container *ngIf="registrationForm.controls['cognome'].invalid && (registrationForm.controls['cognome'].dirty || registrationForm.controls['cognome'].touched)">
+              <p [ngStyle]="{'color':'red'}">Inserisci un cognome valido</p>
+              
+            </ng-container>
+          </div> 
+      </div>
+      
+      
+      <div>
+          <div class="form-group col-md-6 pe-2">
+              <label for="ragioneS">Ragione sociale</label>
+              <input type="text" class="form-control" formControlName="ragioneS" id="ragioneS" placeholder="Ragione sociale" [attr.disabled]="false">
+              <ng-container *ngIf="registrationForm.controls['ragioneS'].invalid && (registrationForm.controls['ragioneS'].dirty || registrationForm.controls['ragioneS'].touched)">
+               
+                <p [ngStyle]="{'color':'red'}">Inserisci una ragione sociale valida</p>
+               
+              </ng-container>
+          </div>
+      </div>
+      
+      <!--Indirizzo-->
+      <div class="form-row d-flex">
+          <div class="form-group col-md-6 pe-2">
+            <label for="indirizzo">Indirizzo</label>
+            <input type="text" class="form-control" formControlName="indirizzo" id="indirizzo" placeholder="Via e numero civico">
+            <ng-container *ngIf="registrationForm.controls['indirizzo'].invalid && (registrationForm.controls['indirizzo'].dirty || registrationForm.controls['indirizzo'].touched)">
+         
+              <p [ngStyle]="{'color':'red'}">Inserisci un indirizzo valido</p>
+     
+            </ng-container>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="citta">Città</label>
+            <input type="text" class="form-control" formControlName="citta" id="citta" placeholder="Città">
+            <ng-container *ngIf="registrationForm.controls['citta'].invalid && (registrationForm.controls['citta'].dirty || registrationForm.controls['citta'].touched)">
+              
+              <p [ngStyle]="{'color':'red'}">Inserisci una citta valida</p>
+           
+            </ng-container>
+          </div>
+      </div>
+
+      <div class="form-row d-flex">
+          <div class="form-group col-md-6 pe-2">
+            <label for="provincia">Provincia</label>
+            <input type="text" class="form-control" formControlName="provincia" id="provincia" placeholder="Provincia">
+            <ng-container *ngIf="registrationForm.controls['provincia'].invalid && (registrationForm.controls['provincia'].dirty || registrationForm.controls['provincia'].touched)">
+              
+              <p [ngStyle]="{'color':'red'}">Inserisci una provincia valida</p>
+       
+            </ng-container>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="cap">Cap</label>
+            <input type="text" class="form-control" formControlName="cap" id="cap" placeholder="Cap">
+            <ng-container *ngIf="registrationForm.controls['cap'].invalid && (registrationForm.controls['cap'].dirty || registrationForm.controls['cap'].touched)">
+        
+              <p [ngStyle]="{'color':'red'}">Inserisci un cap valido</p>
+              
+            </ng-container>
+          </div>
+      </div>
+
+      <div>
+          <div class="form-group col-md-6 pe-2">
+              <label for="nazione">Nazione</label>
+              <input type="text" class="form-control" formControlName="nazione" id="nazione" placeholder="Nazione">
+              <ng-container *ngIf="registrationForm.controls['nazione'].invalid && (registrationForm.controls['nazione'].dirty || registrationForm.controls['nazione'].touched)">
+               
+                <p [ngStyle]="{'color':'red'}">Inserisci una nazione valida</p>
+            
+              </ng-container>
+          </div>
+      </div>
+
+
+      <div class="form-row d-flex">
+          <div class="form-group col-md-6 pe-2">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" formControlName="email" id="email" placeholder="Email">
+            <ng-container *ngIf="registrationForm.controls['email'].invalid && (registrationForm.controls['email'].dirty || registrationForm.controls['email'].touched)">
+             
+              <p [ngStyle]="{'color':'red'}">Inserisci un email valida</p>
+              
+            </ng-container>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="telefono">Numero di telefono</label>
+            <input type="tel" class="form-control" formControlName="telefono" id="telefono" placeholder="Numero di telefono">
+            <ng-container *ngIf="registrationForm.controls['telefono'].invalid && (registrationForm.controls['telefono'].dirty || registrationForm.controls['telefono'].touched)">
+        
+              <p [ngStyle]="{'color':'red'}">Inserisci un telefono valido</p>
+            
+            </ng-container>
+          </div>
+        </div>
+      <button routerLink="lista" type="button" class="btn btn-primary mt-4" [disabled]="registrationForm.invalid" (click)="aggiungiLista()">Registra contatto</button>
+      
+  </form>
+</div>
+
+
+

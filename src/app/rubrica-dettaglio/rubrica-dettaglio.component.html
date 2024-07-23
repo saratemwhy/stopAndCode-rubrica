@@ -1,0 +1,51 @@
+<div class="container">  
+    <h2>Riepilogo contatto</h2>
+    
+    <form class="border border-secondary p-4">
+        
+        <div class="form-group form-row d-flex">
+            <div class="col-md-6 p-2">
+                <input type="text" class="form-control" placeholder={{contactD?.nome}} [attr.disabled]="true">
+            </div>
+            <div class="col-md-6 p-2">
+                <input type="text" class="form-control" placeholder={{contactD?.cognome}} [attr.disabled]="true">
+            </div>
+        </div>
+
+        <div class="col-md-6 p-2">
+            <input type="text" class="form-control" placeholder={{contactD?.ragioneS}} [attr.disabled]="true">
+        </div>
+
+        <div class="form-group form-row d-flex">
+            <div class="col-md-6 p-2">
+                <input type="text" class="form-control" placeholder={{contactD?.indirizzo}} [attr.disabled]="true">
+            </div>
+            <div class="col-md-6 p-2">
+                <input type="text" class="form-control" placeholder={{contactD?.citta}} [attr.disabled]="true">
+            </div>
+        </div>
+        <div class="form-group form-row d-flex">
+            <div class="col-md-6 p-2">
+                <input type="text" class="form-control" placeholder={{contactD?.provincia}} [attr.disabled]="true">
+            </div>
+            <div class="col-md-6 p-2">
+                <input type="text" class="form-control" placeholder={{contactD?.cap}} [attr.disabled]="true">
+            </div>
+        </div>
+
+        <div class="col-md-6 p-2">
+            <input type="text" class="form-control" placeholder={{contactD?.nazione}} [attr.disabled]="true">
+        </div>
+
+        <div class="form-group form-row d-flex">
+            <div class="col-md-6 p-2">
+                <input type="text" class="form-control" placeholder={{contactD?.email}} [attr.disabled]="true">
+            </div>
+            <div class="col-md-6 p-2">
+                <input type="text" class="form-control" placeholder={{contactD?.telefono}} [attr.disabled]="true">
+            </div>
+        </div>
+
+        <button class="btn btn-primary m-2 p-2">Modifica</button>
+    </form>
+</div>

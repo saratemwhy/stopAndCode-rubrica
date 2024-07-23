@@ -1,0 +1,29 @@
+
+<div class="container pt-4">
+    <h2 class="pb-4">Lista contatti</h2>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
+                <th scope="col">Ragione sociale</th>
+                <th scope="col">Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of contact">
+                <th scope="row">{{c.id}}</th>
+                <td>{{c.nome}}</td>
+                <td>{{c.cognome}}</td>
+                <td>{{c.ragioneS}}</td>
+                <td><a [routerLink]="['/dettaglio', c.id]"><button type="button" class="btn btn-primary btn-sm m-2" id="modifica">Dettaglio</button></a>
+                    <button type="button" class="btn btn-secondary btn-sm" id="elimina" (click)="cancellaContatto(c.id)">Elimina</button>
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</div>
+  
